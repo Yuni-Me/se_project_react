@@ -1,23 +1,32 @@
 import "./Header.css";
+import Avatar from "../../images/Avatar.svg";
+import Logo from "../../images/Logo.svg";
 
 const Header = () => {
-  console.log("Header");
+  const currentDate = new Date().toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <header className="header">
       <div className="header__logo">
         <div>
-          <img src="/images/Logo.svg" alt="logo" />
+          <img src={Logo} alt="logo" />
         </div>
-        <div>Date</div>
+        <div>
+          {currentDate}, {}
+        </div>
       </div>
       <div className="header__avatar-logo">
         <div>
-          <button type="text">Add New Clothes</button>
+          <button className="header__button" type="text">
+            + Add Clothes
+          </button>
         </div>
-        <div>Name</div>
+        <div>Yunia Matamoros</div>
         <div>
-          <img src="/images/Avatar.svg" alt="avatar" />
+          <img src={Avatar} alt="avatar" />
         </div>
       </div>
     </header>

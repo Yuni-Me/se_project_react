@@ -1,9 +1,18 @@
+@font-face {
+  font-family: Cabinet Grotesk;
+  src: "../fonts/CabinetGrotesk-Bold.woff";
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
   padding: 0 20px;
+  font-family: "Cabinet Grotesk", sans serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
 }
 .header__logo {
   display: flex;
@@ -15,4 +24,14 @@
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+.header__button {
+  font-family: "Cabinet Grotesk", sans serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }

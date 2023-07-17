@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Cabinet Grotesk;
+  src: "../fonts/CabinetGrotesk-Bold.woff";
+}
+
+.main {
+  padding: 0 20px;
+  font-family: "Cabinet Grotesk", sans serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.card_section {
+  margin-top: 20px;
+}
+.card__name {
+  text-align: center;
+  font-family: "Cabinet Grotesk", sans serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.card__image {
+  width: 328px;
+  height: 328px;
+  border-radius: 10px;
+}
+.card_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  font-family: "Cabinet Grotesk", sans-serif;
+  margin-top: 20px;
+}
