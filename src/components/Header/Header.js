@@ -2,7 +2,7 @@ import "./Header.css";
 import Avatar from "../../images/Avatar.svg";
 import Logo from "../../images/Logo.svg";
 
-const Header = () => {
+const Header = ({ placeName, onCreateModal }) => {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -15,12 +15,16 @@ const Header = () => {
           <img src={Logo} alt="logo" />
         </div>
         <div>
-          {currentDate}, {}
+          {currentDate}, {placeName}
         </div>
       </div>
       <div className="header__avatar-logo">
         <div>
-          <button className="header__button" type="text">
+          <button
+            className="header__button"
+            type="text"
+            onClick={onCreateModal}
+          >
             + Add Clothes
           </button>
         </div>
