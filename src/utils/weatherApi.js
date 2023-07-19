@@ -1,4 +1,3 @@
-// https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}
 import { APIkey, latitude, longitude } from "./constants";
 
 export const getWeatherForecast = () => {
@@ -20,8 +19,15 @@ export const parseWeatherData = (data) => {
   return Math.ceil(temperature);
 };
 
-export const parseLoactionData = (data) => {
-  const name = data.name;
-  const location = name;
+export const parseLocationData = (data) => {
+  const location = data.name;
   return location;
+};
+
+export const parseWeatherBannerData = (data) => {
+  const sunrise = data.sys.sunrise;
+  const sunset = data.sys.sunset;
+  const weatherType = data.weather[0].main;
+  const weatherInfo = [sunrise, sunset, weatherType];
+  return weatherInfo;
 };

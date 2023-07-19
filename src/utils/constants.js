@@ -1,40 +1,48 @@
 export const weatherOptions = [
-  { url: require("../images/day/sunny.svg").default, day: true, type: "light" },
+  {
+    url: require("../images/day/sunny.svg").default,
+    day: true,
+    type: "Clear",
+  },
   {
     url: require("../images/day/cloudy.svg").default,
     day: true,
-    type: "cloudy",
+    type: "Clouds",
   },
-  { url: require("../images/day/rain.svg").default, day: true, type: "rain" },
-  { url: require("../images/day/snow.svg").default, day: true, type: "snow" },
-  { url: require("../images/day/storm.svg").default, day: true, type: "storm" },
-  { url: require("../images/day/fog.svg").default, day: true, type: "fog" },
+  { url: require("../images/day/rain.svg").default, day: true, type: "Rain" },
+  { url: require("../images/day/snow.svg").default, day: true, type: "Snow" },
+  {
+    url: require("../images/day/storm.svg").default,
+    day: true,
+    type: "Storm",
+  },
+  { url: require("../images/day/fog.svg").default, day: true, type: "Mist" },
   {
     url: require("../images/night/moon.svg").default,
     day: false,
-    type: "light",
+    type: "Clear",
   },
   {
     url: require("../images/night/cloudy.svg").default,
     day: false,
-    type: "cloudy",
+    type: "Clouds",
   },
   {
     url: require("../images/night/rain.svg").default,
     day: false,
-    type: "rain",
+    type: "Rain",
   },
   {
     url: require("../images/night/snow.svg").default,
     day: false,
-    type: "snow",
+    type: "Snow",
   },
   {
     url: require("../images/night/storm.svg").default,
     day: false,
-    type: "storm",
+    type: "Storm",
   },
-  { url: require("../images/night/fog.svg").default, day: false, type: "fog" },
+  { url: require("../images/night/fog.svg").default, day: false, type: "Mist" },
 ];
 
 export const defaultClothingItems = [
@@ -79,11 +87,11 @@ export const defaultClothingItems = [
 export const APIkey = "c6ef57b82cd4aff6a67f912e02400d95";
 
 // export const latitude = 52.37;
-export const latitude = -51.79;
+// export const latitude = -51.79;
 // export const latitude = 36.17;
-// export const latitude = 27.95;
+export const latitude = 27.95;
 
 // export const longitude = 4.89;
-export const longitude = -59.52;
+// export const longitude = -59.52;
 // export const longitude = -115.14;
-// export const longitude = -82.45;
+export const longitude = -82.45;
