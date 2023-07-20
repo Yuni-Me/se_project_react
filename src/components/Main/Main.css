@@ -3,9 +3,37 @@
   src: "../fonts/CabinetGrotesk-Bold.woff";
 }
 .main {
-  padding: 0 20px;
   font-family: "Cabinet Grotesk", sans serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
+}
+.main__section {
+  padding-top: 20px;
+}
+
+.main__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  font-family: "Cabinet Grotesk", sans-serif;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 1300px) {
+  .main__section {
+    padding-top: 5px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main__section {
+    padding-top: 2px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .main__section {
+    padding-top: 0;
+  }
 }

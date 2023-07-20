@@ -3,7 +3,9 @@ import { weatherOptions } from "../../utils/constants";
 
 const WeatherCard = ({ day = false, type = "Clear", weatherTemp = "" }) => {
   const imgSrc = weatherOptions.filter((image) => {
-    return image.day === day && image.type === type;
+    if (image.type.includes(type)) {
+      return image.day === day && image.type === type;
+    }
   });
 
   const imgSrcUrl = imgSrc[0].url || "";

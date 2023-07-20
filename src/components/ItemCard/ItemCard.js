@@ -1,3 +1,4 @@
+import "./ItemCard.css";
 const ItemCard = ({ item, myKey, onSelectCard }) => {
   return (
     <div className="card">

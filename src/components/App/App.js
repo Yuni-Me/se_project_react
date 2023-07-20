@@ -81,7 +81,8 @@ function App() {
               type="radio"
               id="hot"
               value="hot"
-              checked
+              // checked={this.checked}
+              // onChange={() => this.setChecked(!this.checked)}
             />
             <label>Hot</label>
           </div>

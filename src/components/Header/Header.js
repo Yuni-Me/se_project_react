@@ -11,10 +11,10 @@ const Header = ({ placeName, onCreateModal }) => {
   return (
     <header className="header">
       <div className="header__logo">
-        <div>
+        <div className="header__logo-image">
           <img src={Logo} alt="logo" />
         </div>
-        <div>
+        <div className="header__info">
           {currentDate}, {placeName}
         </div>
       </div>
@@ -28,7 +28,7 @@ const Header = ({ placeName, onCreateModal }) => {
             + Add Clothes
           </button>
         </div>
-        <div>Yunia Matamoros</div>
+        <div className="header__name">Yunia Matamoros</div>
         <div>
           <img src={Avatar} alt="avatar" />
         </div>
