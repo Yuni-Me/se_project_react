@@ -21,3 +21,10 @@
   height: 328px;
   border-radius: 10px;
 }
+
+@media screen and (max-width: 390px) {
+  .card__image {
+    width: 310px;
+    height: 310px;
+  }
+}

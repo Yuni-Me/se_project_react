@@ -18,10 +18,37 @@
   margin-left: 35px;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 575px) {
   .modal__content-preview {
+    height: 460px;
+  }
+  .modal__preview-text {
+    margin-top: 5px;
+    margin-left: 30px;
   }
   .modal__image {
+    height: 380px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .modal__content-preview {
     height: 400px;
+  }
+  .modal__image {
+    height: 310px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .modal__content-preview {
+    height: 300px;
+  }
+  .modal__preview-text {
+    margin-top: 5px;
+    margin-left: 25px;
+    font-size: 16px;
+  }
+  .modal__image {
+    height: 290px;
   }
 }

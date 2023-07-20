@@ -35,5 +35,11 @@
 @media screen and (max-width: 770px) {
   .main__section {
     padding-top: 0;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .main__section {
+    font-size: 16px;
   }
 }

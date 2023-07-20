@@ -55,7 +55,7 @@
 
 @media screen and (max-width: 730px) {
   .header {
-    margin: o;
+    margin: 0;
   }
   .header__avatar-logo {
     height: 50px;
@@ -63,12 +63,8 @@
   .header__name {
     justify-self: flex-start;
     margin-bottom: 10px;
-    /* align-self: flex-start; */
   }
   .header__button {
-    /* justify-self: flex-end;
-    align-self: flex-end;
-    margin-right: -450px; */
     position: absolute;
     top: 55px;
     right: 55px;
@@ -79,5 +75,18 @@
 @media screen and (max-width: 575px) {
   .header {
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .header {
+    font-size: 14px;
+  }
+  .header__name {
+    display: none;
+  }
+  .header__button {
+    font-size: 14px;
+    right: 30px;
   }
 }

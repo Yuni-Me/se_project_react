@@ -96,3 +96,41 @@
 .modal__button_disabled {
   opacity: 0.3;
 }
+@media screen and (max-width: 575px) {
+  .modal__content {
+    max-width: 420px;
+    min-height: 390px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .modal__content {
+    max-width: 340px;
+    font-size: 12px;
+    height: 300px;
+  }
+  .modal__label {
+    margin-top: 18px;
+  }
+  .modal__input {
+    font-size: 12px;
+  }
+  .modal__button {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .modal__content {
+    max-width: 300px;
+    font-size: 12px;
+    height: 190px;
+    padding: 20px 20px;
+  }
+  .modal__label {
+    margin-top: 14px;
+  }
+  .modal__button {
+    margin-top: 0;
+  }
+}

@@ -30,15 +30,16 @@
 @media screen and (max-width: 760px) {
   .weather {
     position: relative;
-    max-width: 1360px;
-    height: 80px;
+    height: 70px;
   }
   .weather__info {
     top: 25px;
     font-size: 20px;
   }
-  .weather__image {
-    /* height: 80px; */
+}
+@media screen and (max-width: 575px) {
+  .weather {
+    height: 60px;
   }
 }
 @media screen and (max-width: 440px) {
