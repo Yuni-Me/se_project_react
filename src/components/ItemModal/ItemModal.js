@@ -13,10 +13,10 @@ const ItemModal = ({ selectedCard, onClose }) => {
           src={selectedCard.link}
           alt={selectedCard.name}
         />
-        <div className="modal__preview-text">{selectedCard.name}</div>
-        <div className="modal__preview-text">
+        <h3 className="modal__preview-text">{selectedCard.name}</h3>
+        <h3 className="modal__preview-text">
           Weather type: {selectedCard.weather}
-        </div>
+        </h3>
       </div>
     </div>
   );

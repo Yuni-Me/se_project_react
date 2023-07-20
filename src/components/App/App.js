@@ -33,11 +33,15 @@ function App() {
   };
 
   useEffect(() => {
-    getWeatherForecast().then((data) => {
-      setTemp(parseWeatherData(data));
-      setLocation(parseLocationData(data));
-      setWeatherBanner(parseWeatherBannerData(data));
-    });
+    getWeatherForecast()
+      .then((data) => {
+        setTemp(parseWeatherData(data));
+        setLocation(parseLocationData(data));
+        setWeatherBanner(parseWeatherBannerData(data));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   return (
