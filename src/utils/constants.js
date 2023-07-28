@@ -18,7 +18,7 @@ export const weatherOptions = [
   {
     url: require("../images/day/storm.svg").default,
     day: true,
-    type: "Storm Thunderstorm Tornado",
+    type: "Thunderstorm",
   },
   {
     url: require("../images/day/fog.svg").default,
@@ -48,7 +48,7 @@ export const weatherOptions = [
   {
     url: require("../images/night/storm.svg").default,
     day: false,
-    type: "Storm Thunderstorm Tornado",
+    type: "Thunderstorm",
   },
   {
     url: require("../images/night/fog.svg").default,
@@ -109,3 +109,5 @@ export const latitude = 27.95;
 // export const longitude = -115.14;
 // export const longitude = 139.65;
 export const longitude = -82.45;
+
+// Add "Tornado" to the "Thunderstorm" type
