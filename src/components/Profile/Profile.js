@@ -1,6 +1,8 @@
 import "./Profile.css";
+import SideBar from "../SideBar/SideBar";
+import ClothesSection from "../ClothesSection/ClothesSection";
 
-const Profile = ({ cards, onCardClick, onCardDelete, onAddNewClick }) => {
+const Profile = ({ cards, onSelectedCard, onCardDelete, onAddNewClick }) => {
   return (
     <div className="profile">
       <section className="profile__side">
@@ -8,10 +10,10 @@ const Profile = ({ cards, onCardClick, onCardDelete, onAddNewClick }) => {
       </section>
       <section className="profile__cards">
         <ClothesSection
-          sectionData={cards}
-          onAddNewClicks={onAddNewClicks}
-          onCardClick={onCardClick}
-          onCardDelete={onCardDelete}
+          clothingItems={cards}
+          onAddNewClick={onAddNewClick}
+          onSelectCard={onSelectedCard}
+          // onCardDelete={onCardDelete}
         />
       </section>
     </div>

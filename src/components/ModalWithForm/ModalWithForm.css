@@ -8,7 +8,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  font-family: "Cabinet Grotesk";
+  font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.2;
@@ -59,7 +59,7 @@
   border-bottom: 1px solid #000;
   margin: 10px 0;
   padding-bottom: 5px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.2;
@@ -80,7 +80,7 @@
 }
 .modal__button {
   margin-top: 20px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.2;

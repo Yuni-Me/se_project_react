@@ -3,29 +3,16 @@ import "./ToggleSwitch.css";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
 
 const ToggleSwitch = () => {
-  //   const [currentTempUnit, handleToggleSwitchChange] = useState("C");
-
-  //   const handleChange = (e) => {
-  //     if (currentTempUnit === "C") {
-  //       handleToggleSwitchChange("F");
-  //     }
-  //     if (currentTempUnit === "F") {
-  //       handleToggleSwitchChange("C");
-  //     }
-  //   };
-
-  //   console.log(currentTempUnit);
-
   const { currentTempUnit, handleToggleSwitchChange } = useContext(
     CurrentTempUnitContext
   );
-  console.log(currentTempUnit);
 
   return (
     <label className="switch">
       <input
         type="checkbox"
         className="switch__box"
+        id="switch-box"
         onChange={handleToggleSwitchChange}
       />
       <span
@@ -36,18 +23,18 @@ const ToggleSwitch = () => {
         }
       ></span>
       <p
-        className={`switch__temp-F ${
-          currentTempUnit === "F" && "switch__active"
-        }`}
-      >
-        F
-      </p>
-      <p
         className={`switch__temp-C ${
           currentTempUnit === "C" && "switch__active"
         }`}
       >
         C
+      </p>
+      <p
+        className={`switch__temp-F ${
+          currentTempUnit === "F" && "switch__active"
+        }`}
+      >
+        F
       </p>
     </label>
   );

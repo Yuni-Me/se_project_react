@@ -12,7 +12,12 @@ export const weatherOptions = [
   {
     url: require("../images/day/rain.svg").default,
     day: true,
-    type: "Rain Drizzle",
+    type: "Rain",
+  },
+  {
+    url: require("../images/day/rain.svg").default,
+    day: true,
+    type: "Drizzle",
   },
   { url: require("../images/day/snow.svg").default, day: true, type: "Snow" },
   {
@@ -21,9 +26,34 @@ export const weatherOptions = [
     type: "Thunderstorm",
   },
   {
+    url: require("../images/day/storm.svg").default,
+    day: true,
+    type: "Tornado",
+  },
+  {
     url: require("../images/day/fog.svg").default,
     day: true,
-    type: "Mist Fog Smoke Haze Dust",
+    type: "Mist",
+  },
+  {
+    url: require("../images/day/fog.svg").default,
+    day: true,
+    type: "Fog",
+  },
+  {
+    url: require("../images/day/fog.svg").default,
+    day: true,
+    type: "Smoke",
+  },
+  {
+    url: require("../images/day/fog.svg").default,
+    day: true,
+    type: "Haze",
+  },
+  {
+    url: require("../images/day/fog.svg").default,
+    day: true,
+    type: "Dust",
   },
   {
     url: require("../images/night/moon.svg").default,
@@ -38,7 +68,12 @@ export const weatherOptions = [
   {
     url: require("../images/night/rain.svg").default,
     day: false,
-    type: "Rain Drizzle",
+    type: "Rain",
+  },
+  {
+    url: require("../images/night/rain.svg").default,
+    day: false,
+    type: "Drizzle",
   },
   {
     url: require("../images/night/snow.svg").default,
@@ -51,9 +86,34 @@ export const weatherOptions = [
     type: "Thunderstorm",
   },
   {
+    url: require("../images/night/storm.svg").default,
+    day: false,
+    type: "Tornado",
+  },
+  {
     url: require("../images/night/fog.svg").default,
     day: false,
-    type: "Mist Fog Smoke Haze Dust",
+    type: "Mist",
+  },
+  {
+    url: require("../images/night/fog.svg").default,
+    day: false,
+    type: "Fog",
+  },
+  {
+    url: require("../images/night/fog.svg").default,
+    day: false,
+    type: "Smoke",
+  },
+  {
+    url: require("../images/night/fog.svg").default,
+    day: false,
+    type: "Haze",
+  },
+  {
+    url: require("../images/night/fog.svg").default,
+    day: false,
+    type: "Dust",
   },
 ];
 
@@ -109,5 +169,3 @@ export const latitude = 27.95;
 // export const longitude = -115.14;
 // export const longitude = 139.65;
 export const longitude = -82.45;
-
-// Add "Tornado" to the "Thunderstorm" type
