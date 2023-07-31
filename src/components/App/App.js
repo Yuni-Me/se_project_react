@@ -10,7 +10,7 @@ import {
 } from "../../utils/weatherApi";
 import "./App.css";
 import { useState, useEffect, useRef } from "react";
-import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import ConfirmModal from "../ConfirmModal/ConfirmModal";
@@ -24,7 +24,7 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [location, setLocation] = useState("");
   const [weatherBanner, setWeatherBanner] = useState([]);
-  const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleCreateModal = () => {
@@ -55,7 +55,9 @@ function App() {
   };
 
   const handleToggleSwitchChange = () => {
-    currentTempUnit === "F" ? setCurrentTempUnit("C") : setCurrentTempUnit("F");
+    currentTemperatureUnit === "F"
+      ? setCurrentTemperatureUnit("C")
+      : setCurrentTemperatureUnit("F");
   };
 
   const handleCardDelete = (id) => {
@@ -88,8 +90,8 @@ function App() {
 
   return (
     <div className="page">
-      <CurrentTempUnitContext.Provider
-        value={{ currentTempUnit, handleToggleSwitchChange }}
+      <CurrentTemperatureUnitContext.Provider
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <Header placeName={location} onCreateModal={handleCreateModal} />
         <Switch>
@@ -133,7 +135,7 @@ function App() {
             onDelete={handleCardDelete}
           />
         )}
-      </CurrentTempUnitContext.Provider>
+      </CurrentTemperatureUnitContext.Provider>
     </div>
   );
 }
