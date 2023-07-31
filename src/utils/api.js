@@ -3,6 +3,7 @@ const baseUrl = "https://my-json-server.typicode.com/Yuni-Me/se_project_react";
 
 const checkServerResponse = (res) => {
   if (res.ok) {
+    console.log(res);
     return res.json();
   } else {
     return Promise.reject(`Error: ${res.status}`);
@@ -10,7 +11,7 @@ const checkServerResponse = (res) => {
 };
 
 const getItemList = () => {
-  const getItems = fetch(`${baseUrl}/items/`, {
+  const getItems = fetch(`${baseUrl}/items`, {
     headers: {
       "Content-Type": "application/json",
     },

@@ -16,6 +16,7 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import ConfirmModal from "../ConfirmModal/ConfirmModal";
 import Profile from "../Profile/Profile";
 import api from "../../utils/api";
+import { defaultClothingItems } from "../../utils/constants";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -24,7 +25,7 @@ function App() {
   const [location, setLocation] = useState("");
   const [weatherBanner, setWeatherBanner] = useState([]);
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
-  const [clothingItems, setClothingItems] = useState([]);
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleCreateModal = () => {
     setActiveModal("create");
