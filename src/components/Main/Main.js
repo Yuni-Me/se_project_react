@@ -10,6 +10,8 @@ function Main({
   weatherBannerInfo,
   onSelectCard,
   clothingItems = defaultClothingItems,
+  onCardLike,
+  loggedIn,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherTemp?.temp?.[currentTemperatureUnit] || 999;
@@ -35,8 +37,8 @@ function Main({
     }
   }, [temp]);
 
-  const filteredCards = clothingItems.filter((item) => {
-    return item.weather.toLowerCase() === weatherType;
+  const filteredCards = clothingItems?.filter((item) => {
+    return item.weather === weatherType;
   });
   const dayOrNight = useMemo(() => {
     const currentTime = Date.now() / 1000;
@@ -55,12 +57,14 @@ function Main({
       <section className="main__section" id="card-section">
         Today is {temp}°{currentTemperatureUnit} / You may want to wear:
         <div className="main__cards">
-          {filteredCards.map((item) => {
+          {filteredCards?.map((item) => {
             return (
               <ItemCard
                 item={item}
                 key={item?.id || item?._id}
                 onSelectCard={onSelectCard}
+                onCardLike={onCardLike}
+                loggedIn={loggedIn}
               />
             );
           })}

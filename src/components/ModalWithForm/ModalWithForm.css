@@ -22,7 +22,8 @@
   box-sizing: border-box;
   background-color: white;
   max-width: 496px;
-  min-height: 436px;
+  /* min-height: 436px; */
+  min-height: 304px;
   width: 100%;
   border-radius: 20px;
   padding: 28px 28px;
@@ -44,9 +45,6 @@
 }
 .modal__title {
   margin-top: 0;
-  display: inline;
-  font-weight: 700;
-  font-size: 16px;
 }
 .modal__label {
   display: block;
@@ -84,11 +82,15 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 1.2;
-  width: 124px;
-  height: 36px;
+  /* width: 124px;
+  height: 36px; */
+  padding: 12px 18px;
   background-color: #000;
   color: #fff;
   transition: 1s opacity ease-in-out;
+  position: absolute;
+  bottom: 28px;
+  border-radius: 10px;
 }
 .modal__button:hover {
   opacity: 0.6;

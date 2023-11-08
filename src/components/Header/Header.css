@@ -41,6 +41,22 @@
   color: #000;
   text-decoration: none;
 }
+.avatar__image {
+  width: 45px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  object-fit: scale-down;
+  object-position: top;
+}
+
+.header__nav-button {
+  background-color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1010px) {
   .header {
     padding-bottom: 0;

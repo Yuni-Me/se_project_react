@@ -50,7 +50,9 @@
   background-color: transparent;
   cursor: pointer;
 }
-
+.modal__delete_hidden {
+  display: none;
+}
 @media screen and (max-width: 575px) {
   .modal__content-preview {
     height: 460px;

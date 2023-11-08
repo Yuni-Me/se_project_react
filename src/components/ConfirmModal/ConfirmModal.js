@@ -19,7 +19,7 @@ const DeleteConfirmationModal = ({ onClose, selectedCard, onDelete }) => {
             className="modal__confirmation-button modal__confirmation-button_yes"
             type="button"
             onClick={() => {
-              onDelete(selectedCard.id);
+              onDelete(selectedCard);
             }}
           >
             Yes, delete item
