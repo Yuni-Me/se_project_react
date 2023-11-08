@@ -1,6 +1,7 @@
 @font-face {
   font-family: Cabinet Grotesk;
-  src: "../fonts/CabinetGrotesk-Bold.woff";
+  src: "../../vendor/fonts/CabinetGrotesk-Bold.woff";
+  /* src: "../fonts/CabinetGrotesk-Bold.woff"; */
 }
 .page {
   max-width: 1360px;

@@ -1,4 +1,3 @@
-// const baseUrl = "http://localhost:3001";
 const baseUrl = "http://localhost:3001";
 const token = localStorage.getItem("jwt");
 
