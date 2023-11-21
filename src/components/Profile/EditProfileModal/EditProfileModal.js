@@ -5,12 +5,7 @@ import "./EditProfileModal.css";
 
 const EditProfileModal = ({ handleCloseModal, onUserChanges }) => {
   const currentUser = useContext(CurrentUserContext);
-  // const id = currentUser._id;
-  // const id = currentUser.id;
-  // console.log(id);
-  // console.log(currentUser);
-  // const token = localStorage.getItem("jwt");
-  // console.log(token);
+
   const [name, setName] = useState(currentUser.name);
   const handleName = (e) => {
     setName(e.target.value);
@@ -24,8 +19,6 @@ const EditProfileModal = ({ handleCloseModal, onUserChanges }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(id + " " + name + " " + avatar + " " + token);
-    // onUserChanges({ name, avatar, id, token });
     onUserChanges({ name, avatar });
   };
 

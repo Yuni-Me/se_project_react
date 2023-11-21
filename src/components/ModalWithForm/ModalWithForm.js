@@ -21,7 +21,6 @@ const ModalWithForm = ({
           {children}
           <button
             type="submit"
-            // className="modal__submit-button"
             className={submitButtonClass}
             disabled={isEnabled}
             onClick={onSubmit}

@@ -23,7 +23,6 @@ const AddItemModal = ({ handleCloseModal, onAddItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name + " " + link + " " + weatherType);
     onAddItem({ name, imageUrl: link, weather: weatherType });
   };
 
@@ -74,9 +73,6 @@ const AddItemModal = ({ handleCloseModal, onAddItem }) => {
           value="hot"
           checked={weatherType === "hot"}
           onChange={handleWeatherChange}
-          // onChange={this.onValueChange}
-          // checked={this.checked}
-          // onChange={() => this.setChecked(!this.checked)}
         />
         <label htmlFor="weather-hot">Hot</label>
       </div>

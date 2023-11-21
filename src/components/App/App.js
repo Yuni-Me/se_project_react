@@ -65,7 +65,6 @@ function App() {
   };
 
   const handleSelectedCard = (card) => {
-    console.log(card);
     setActiveModal("preview");
     setSelectedCard(card);
   };
@@ -93,7 +92,6 @@ function App() {
 
   const handleCardDelete = (cardItem) => {
     const token = localStorage.getItem("jwt");
-    console.log(cardItem);
     api
       .removeItem(cardItem, token)
       .then(() => {
@@ -145,12 +143,10 @@ function App() {
 
   const handleUserChanges = (data) => {
     const token = localStorage.getItem("jwt");
-    console.log(token);
     auth
       .editProfile(data, token)
       .then((res) => {
         setCurrentUser(res.data);
-        console.log(currentUser);
         setLoggedIn(true);
         handleCloseModal();
       })
@@ -269,7 +265,6 @@ function App() {
               onSignUp={handleSignUp}
               onClose={handleCloseModal}
               handleLogin={handleLoginModal}
-              // onOpen={activeModal === "signup"}
             />
           )}
           {activeModal === "login" && (

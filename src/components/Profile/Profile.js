@@ -10,8 +10,6 @@ const Profile = ({
   onLogOut,
   loggedIn,
   onCardLike,
-  // onAddNewClick,
-  // onCardDelete,
 }) => {
   return (
     <div className="profile">
@@ -41,7 +39,6 @@ const Profile = ({
           onSelectCard={onSelectCard}
           onCardLike={onCardLike}
           loggedIn={loggedIn}
-          // onCardDelete={onCardDelete}
         />
       </section>
     </div>

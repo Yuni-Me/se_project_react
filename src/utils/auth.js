@@ -36,7 +36,6 @@ const checkToken = (token) => {
 
 const editProfile = (data, token) => {
   const { name, avatar, _id: id } = data;
-  console.log(id);
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
