@@ -1,5 +1,5 @@
 const baseUrl = "http://localhost:3001";
-const token = localStorage.getItem("jwt");
+// const token = localStorage.getItem("jwt");
 
 const checkServerResponse = (res) => {
   if (res.ok) {
@@ -36,7 +36,8 @@ const addItem = (values, token) => {
   return loadItem;
 };
 
-const removeItem = (card) => {
+const removeItem = (card, token) => {
+  console.log(card);
   const { _id: id } = card;
   const deleteItem = fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
