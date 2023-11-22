@@ -7,19 +7,23 @@ const checkServerResponse = (res) => {
   return Promise.reject(`Error: ${res.status}`);
 };
 
+const request = (url, options) => {
+  return fetch(url, options).then(checkServerResponse);
+};
+
 const getItemList = () => {
-  const getItems = fetch(`${baseUrl}/items`, {
+  const getItems = request(`${baseUrl}/items`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(checkServerResponse);
+  });
   return getItems;
 };
 
 const addItem = (values, token) => {
   const { name, imageUrl, weather, user } = values;
-  const loadItem = fetch(`${baseUrl}/items`, {
+  const loadItem = request(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,48 +35,49 @@ const addItem = (values, token) => {
       weather,
       user,
     }),
-  }).then(checkServerResponse);
+  });
   return loadItem;
 };
 
 const removeItem = (card, token) => {
   const { _id: id } = card;
-  const deleteItem = fetch(`${baseUrl}/items/${id}`, {
+  const deleteItem = request(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-  }).then(checkServerResponse);
+  });
   return deleteItem;
 };
 
 const addLike = (id, user, token) => {
-  const like = fetch(`${baseUrl}/items/${id}/likes`, {
+  const like = request(`${baseUrl}/items/${id}/likes`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ user }),
-  }).then(checkServerResponse);
+  });
   return like;
 };
 
 const removeLike = (id, user, token) => {
-  const unlike = fetch(`${baseUrl}/items/${id}/likes`, {
+  const unlike = request(`${baseUrl}/items/${id}/likes`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ user }),
-  }).then(checkServerResponse);
+  });
   return unlike;
 };
 
 const api = {
   checkServerResponse,
+  request,
   getItemList,
   addItem,
   removeItem,

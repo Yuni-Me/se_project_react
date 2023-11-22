@@ -1,3 +1,6 @@
+.modal__content-profile {
+  height: 340px;
+}
 .modal__label {
   /* display: block; */
   margin: 24px 0 2px;

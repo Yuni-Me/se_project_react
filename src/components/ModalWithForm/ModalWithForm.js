@@ -7,15 +7,16 @@ const ModalWithForm = ({
   name,
   onSubmit,
   isEnabled,
+  buttonText,
 }) => {
   const submitButtonClass = `modal__button ${
     !isEnabled ? "modal__button_enabled" : "modal__button_disabled"
   }`;
-  console.log();
+
   return (
     <div className={`modal`}>
       <div className={`modal__content modal__content-${name}`}>
-        <button type="button" onClick={onClose} className="modal__close" />
+        <button type="submit" onClick={onClose} className="modal__close" />
         <h3 className="modal__title">{title}</h3>
         <form className="modal__form">
           {children}
@@ -25,7 +26,7 @@ const ModalWithForm = ({
             disabled={isEnabled}
             onClick={onSubmit}
           >
-            Next
+            {buttonText}
           </button>
         </form>
       </div>

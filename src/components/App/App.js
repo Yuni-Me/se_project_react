@@ -32,6 +32,7 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem("jwt"));
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
@@ -40,12 +41,10 @@ function App() {
   };
 
   const handleLoginModal = () => {
-    setActiveModal("");
     setActiveModal("login");
   };
 
   const handleSignupModal = () => {
-    setActiveModal("");
     setActiveModal("signup");
   };
 
@@ -57,10 +56,20 @@ function App() {
     setActiveModal("profile");
   };
 
+  const handleToken = (token) => {
+    if (token) {
+      return auth
+        .checkToken(token)
+        .then((res) => {
+          setCurrentUser(res.data);
+        })
+        .catch(console.error);
+    }
+  };
+
   const handleLogout = () => {
-    setCurrentUser("");
-    localStorage.removeItem("jwt");
     setLoggedIn(false);
+    localStorage.removeItem("jwt");
     history.push("/");
   };
 
@@ -74,7 +83,7 @@ function App() {
   };
 
   const handleAddItem = (values) => {
-    const token = localStorage.getItem("jwt");
+    setToken(localStorage.getItem("jwt"));
     api
       .addItem(values, token)
       .then((res) => {
@@ -91,7 +100,7 @@ function App() {
   };
 
   const handleCardDelete = (cardItem) => {
-    const token = localStorage.getItem("jwt");
+    setToken(localStorage.getItem("jwt"));
     api
       .removeItem(cardItem, token)
       .then(() => {
@@ -105,22 +114,12 @@ function App() {
   };
 
   const handleSignUp = (user) => {
+    const { email, password } = user;
     auth
       .register(user)
-      .then(() => {
+      .then((res) => {
+        handleLogIn({ email, password });
         handleCloseModal();
-        auth
-          .signin(user)
-          .then((res) => {
-            localStorage.setItem("jwt", res.token);
-            auth.checkToken(res.token).then((res) => {
-              setCurrentUser(res.data);
-              setLoggedIn(true);
-            });
-          })
-          .catch((error) => {
-            console.error(error);
-          });
       })
       .catch(console.error);
   };
@@ -129,32 +128,30 @@ function App() {
     auth
       .signin(user)
       .then((res) => {
-        localStorage.setItem("jwt", res.token);
-        auth.checkToken(res.token).then((res) => {
-          setCurrentUser(res.data);
+        if (res.token) {
           setLoggedIn(true);
-        });
-        handleCloseModal();
+          localStorage.setItem("jwt", res.token);
+          handleToken(res.token);
+          handleCloseModal();
+        }
       })
-      .catch((error) => {
-        console.error(error);
-      });
+      .catch(console.error);
   };
 
   const handleUserChanges = (data) => {
-    const token = localStorage.getItem("jwt");
+    setToken(localStorage.getItem("jwt"));
     auth
       .editProfile(data, token)
       .then((res) => {
         setCurrentUser(res.data);
         setLoggedIn(true);
-        handleCloseModal();
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(handleCloseModal());
   };
 
   const handleLikeClick = ({ _id, isLiked, user }) => {
-    const token = localStorage.getItem("jwt");
+    setToken(localStorage.getItem("jwt"));
     !isLiked
       ? api
           .addLike(_id, user, token)
@@ -181,9 +178,7 @@ function App() {
         setLocation(parseLocationData(data));
         setWeatherBanner(parseWeatherBannerData(data));
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
@@ -194,6 +189,16 @@ function App() {
       })
       .catch(console.error);
   }, []);
+
+  useEffect(() => {
+    if (token) {
+      handleToken(token).finally(() => {
+        setLoggedIn(true);
+      });
+    } else {
+      setLoggedIn(false);
+    }
+  }, [token]);
 
   useEffect(() => {
     if (!activeModal) return;
@@ -256,7 +261,6 @@ function App() {
               selectedCard={selectedCard}
               onClose={handleCloseModal}
               onDelete={handleConfirmModal}
-              currentUser={currentUser}
               loggedIn={loggedIn}
             />
           )}
