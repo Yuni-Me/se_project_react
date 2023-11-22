@@ -18,13 +18,12 @@ const ModalWithForm = ({
       <div className={`modal__content modal__content-${name}`}>
         <button type="submit" onClick={onClose} className="modal__close" />
         <h3 className="modal__title">{title}</h3>
-        <form className="modal__form">
+        <form className="modal__form" onSubmit={onSubmit}>
           {children}
           <button
             type="submit"
             className={submitButtonClass}
             disabled={isEnabled}
-            onClick={onSubmit}
           >
             {buttonText}
           </button>

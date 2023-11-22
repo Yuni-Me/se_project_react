@@ -11,10 +11,11 @@ function ClothesSection({
   loggedIn,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  const userId = currentUser ? currentUser._id : "";
-
+  // const userId = currentUser ? currentUser._id : "";
+  // console.log(currentUser);
+  // console.log(currentUser._id);
   const filteredCards = clothingItems?.filter((item) => {
-    return item.owner === userId;
+    return item.owner === currentUser._id;
   });
 
   return (

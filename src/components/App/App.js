@@ -57,14 +57,15 @@ function App() {
   };
 
   const handleToken = (token) => {
-    if (token) {
-      return auth
-        .checkToken(token)
-        .then((res) => {
-          setCurrentUser(res.data);
-        })
-        .catch(console.error);
-    }
+    // if (token) {
+    return auth
+      .checkToken(token)
+      .then((res) => {
+        setCurrentUser(res.data);
+        setLoggedIn(true);
+      })
+      .catch(console.error);
+    // }
   };
 
   const handleLogout = () => {
@@ -129,7 +130,7 @@ function App() {
       .signin(user)
       .then((res) => {
         if (res.token) {
-          setLoggedIn(true);
+          // setLoggedIn(true);
           localStorage.setItem("jwt", res.token);
           handleToken(res.token);
           handleCloseModal();
@@ -145,12 +146,13 @@ function App() {
       .then((res) => {
         setCurrentUser(res.data);
         setLoggedIn(true);
+        handleCloseModal();
       })
-      .catch(console.error)
-      .finally(handleCloseModal());
+      .catch(console.error);
   };
 
   const handleLikeClick = ({ _id, isLiked, user }) => {
+    console.log(_id);
     setToken(localStorage.getItem("jwt"));
     !isLiked
       ? api
@@ -192,9 +194,10 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      handleToken(token).finally(() => {
-        setLoggedIn(true);
-      });
+      handleToken(token);
+      // .finally(() => {
+      //   setLoggedIn(true);
+      // });
     } else {
       setLoggedIn(false);
     }
