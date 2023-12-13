@@ -1,7 +1,10 @@
 import api from "./api";
 // import { request } from "./api";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.undo.it"
+    : "http://localhost:3001";
 
 const signin = ({ email, password }) => {
   // email = email.toLowercase();
